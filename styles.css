@@ -1,0 +1,77 @@
+body {
+    background-color: #f0f0f0;
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .gavetero {
+    width: 300px;
+    height: 150px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(15deg) rotateY(-45deg);
+  }
+  
+  .gaveta {
+    width: 300px;
+    height: 150px;
+    background: #8b5e3c;
+    position: absolute;
+    transform: translateZ(0);
+    transition: transform 0.8s ease;
+  }
+  
+  .gaveta.open {
+    transform: translateZ(100px);
+  }
+  
+  .riel {
+    width: 10px;
+    height: 150px;
+    background: #444;
+    position: absolute;
+    top: 0;
+    transform-style: preserve-3d;
+  }
+  
+  .riel-izq {
+    left: -10px;
+  }
+  
+  .riel-der {
+    right: -10px;
+  }
+  
+  .carpeta {
+    width: 280px;
+    height: 100px;
+    background: #ffd966;
+    position: absolute;
+    top: 25px;
+    left: 10px;
+    border-radius: 5px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    transform: translateZ(0);
+    transition: transform 0.3s ease, top 0.3s ease;
+  }
+  
+  .carpeta[data-index="1"] {
+    transform: translateZ(10px);
+  }
+  
+  .carpeta[data-index="2"] {
+    transform: translateZ(20px);
+  }
+  
+  .carpeta[data-index="3"] {
+    transform: translateZ(30px);
+  }
+  
+  .carpeta.selected {
+    top: -50px;
+    transform: translateZ(50px);
+  }
