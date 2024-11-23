@@ -15,3 +15,11 @@ carpeta.addEventListener('click', (e) => {
     e.stopPropagation(); // Evitar que el evento se propague al contenedor gaveta
 });
 });
+
+document.querySelectorAll('.solapa').forEach(solapa => {
+    solapa.addEventListener('click', () => {
+      const carpeta = solapa.parentElement;
+      document.querySelectorAll('.carpeta').forEach(c => c.classList.remove('selected'));
+      carpeta.classList.add('selected');
+    });
+  });
